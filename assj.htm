@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Quiz</title>
+</head>
+<style>
+    .container{
+        border: 3px solid teal;
+        border-radius: 20px ;
+        padding: 20px;
+        display: none;
+        margin-top: 100px;
+        width: 40%;
+        height: auto;
+        margin-left: 400px;
+        font-size: 28px;
+        color: teal;
+        font-family: 'montserrat';
+
+    }
+
+    button{
+        margin-top: 15px;
+        background-color: blue;
+        border: none;
+        padding: 15px;
+        margin-left: 23px;
+        color: #fff;
+        font-family:'montserrat';
+        font-size: 18px;
+        border-radius: 10px
+
+    }
+
+    button:hover{
+        box-shadow: 5px 5px 10px rgba(214, 210, 210, 0.4);
+    }
+
+body{
+    background-image: url(pa.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+</style>
+<body>
+    <div class="background">
+    <div class="container">
+        Q1. What does CSS stand for? <hr>
+        <input type="radio" name="question1" > Complex Style Sheets  <br>
+        <input type="radio" name="question1"> Community Stylish System <br>
+        <input type="radio" name="question1"> Complete Synchronizes Sheets  <br>
+        <input type="radio" name="question1" id="correct1"> Cascading Style Sheets <br>
+
+        <button class="next" onclick="next(1)">Next question</button>
+    </div>
+
+    <div class="container">
+        Q2. In CSS, how do you make all of the text for an element uppercase? <hr>
+        <input type="radio" name="question2" > text-transform:set-upper <br>
+        <input type="radio" name="question2"> text-transfrom:upper; <br>
+        <input type="radio" name="question2" id="correct2"> text-transfrom:uppercase; <br>
+        <input type="radio" name="question2"> text-transfrom:toUpper; <br>
+
+        <button class="next" onclick="next(2)">Next question</button>
+    </div>
+
+    <div class="container">
+        Q2. In CSS, Which one of these value is used NOT for background-repeat property? <hr>
+        <input type="radio" name="question3" > repeat <br>
+        <input type="radio" name="question3"> repeat-x <br>
+        <input type="radio" name="question3" id="correct3"> repeat-z-axis <br>
+        <input type="radio" name="question3"> no-repeat <br>
+
+        <button class="next" onclick="next(3)">Next question</button>
+    </div>
+
+    <div class="container">
+        Q2. In CSS, what is the common breakpoint range used for tablet media query? <hr>
+        <input type="radio" name="question4" > 2px-68px <br>
+        <input type="radio" name="question4" id="correct4"> 481px-768px <br>
+        <input type="radio" name="question4" > 300px-7000px <br>
+        <input type="radio" name="question4"> 81px-700px <br>
+
+        <button class="next" onclick="next(4)">Next question</button>
+    </div>
+
+    <div class="container">
+        Q5. In CSS, Which of the following properties can be used to set the body color to black? <hr>
+        <input type="radio" name="question5" > body-color:black; <br>
+        <input type="radio" name="question5"> backgroundcolor:black; <br>
+        <input type="radio" name="question5" id="correct5"> background-color:black; <br>
+        <input type="radio" name="question5"> color:black; <br>
+
+        <button class="next" onclick="next(5)">Next question</button>
+    </div>
+
+    <div class="container">
+        Q6. In css, What is the code used to create a CSS grid? <hr>
+        <input type="radio" name="question6" id="correct6"> display:grid;  <br>
+        <input type="radio" name="question6"> display:flex; <br>
+        <input type="radio" name="question6"> display:grid-container;  <br>
+        <input type="radio" name="question6"> display:grid - box; <br>
+
+        <button onclick="result()" >Submit</button>
+        <button><a href="welcome.htm">Back to home</a></button>
+    </div>
+</div>
+
+    <script>
+        //displaying the first block of question
+       
+        document.getElementsByClassName('container')[0].style.display = "block";
+
+        //defining the next button
+        function next(id){
+        document.getElementsByClassName('container')[id-1].style.display = "None";
+        document.getElementsByClassName('container')[id].style.display = "block";
+    }
+
+    //getting final result
+    function result(){
+        var score = 0;
+        if (document.getElementById('correct1').checked){
+        score++;
+    }
+    if (document.getElementById('correct2').checked){
+        score++;
+    }
+    if (document.getElementById('correct3').checked){
+        score++;
+    }
+    if (document.getElementById('correct4').checked){
+        score++;
+    }
+    if (document.getElementById('correct5').checked){
+        score++;
+    }
+    if (document.getElementById('correct6').checked){
+        score++;
+    }
+    alert("Your score is: " + score);
+}
+
+
+    </script>
+</body>
+</html>
